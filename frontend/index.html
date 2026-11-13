@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giriş - Kütüphane Rezervasyon</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">📚 Kütüphane Rezervasyon</a>
+  </header>
+
+  <main>
+    <div id="messages"></div>
+
+    <section class="card narrow">
+      <div class="tabs">
+        <button type="button" class="tab active" data-tab="login">Giriş Yap</button>
+        <button type="button" class="tab" data-tab="register">Kayıt Ol</button>
+      </div>
+
+      <form id="login-form">
+        <label>Öğrenci No <input name="student_no" required autofocus></label>
+        <label>Şifre <input name="password" type="password" required></label>
+        <button type="submit">Giriş</button>
+      </form>
+
+      <form id="register-form" class="hidden">
+        <label>Öğrenci No <input name="student_no" required></label>
+        <label>Ad Soyad <input name="full_name" required></label>
+        <label>E-posta <input name="email" type="email" required></label>
+        <label>Şifre <input name="password" type="password" minlength="6" required></label>
+        <button type="submit">Kayıt Ol</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

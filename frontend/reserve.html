@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rezervasyon Yap - Kütüphane Rezervasyon</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="reserve.html">📚 Kütüphane Rezervasyon</a>
+    <nav>
+      <a href="reserve.html">Rezervasyon Yap</a>
+      <a href="my.html">Rezervasyonlarım</a>
+      <span class="who" id="user-name"></span>
+      <button type="button" class="link" id="logout">Çıkış</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="messages"></div>
+
+    <section class="card">
+      <div class="day-nav">
+        <button type="button" class="link" id="prev-day">‹ Önceki gün</button>
+        <div class="inline">
+          <input type="date" id="date-input">
+          <select id="kind-select">
+            <option value="all">Tüm alanlar</option>
+            <option value="desk">Çalışma masaları</option>
+            <option value="room">Grup odaları</option>
+          </select>
+        </div>
+        <button type="button" class="link" id="next-day">Sonraki gün ›</button>
+      </div>
+      <h1 id="day-title">Yükleniyor…</h1>
+
+      <form id="reserve-form" class="reserve-form">
+        <label>Alan <select name="space_id" id="f-space" required></select></label>
+        <label>Başlangıç <select name="start_hour" id="f-hour" required></select></label>
+        <label>Süre <select name="duration" id="f-duration"></select></label>
+        <button type="submit">Rezerve Et</button>
+      </form>
+      <p class="muted">Tablodaki boş bir hücreye tıklayarak formu doldurabilirsiniz.</p>
+
+      <div class="legend">
+        <span class="cell free"></span> Boş
+        <span class="cell taken"></span> Dolu
+        <span class="cell mine"></span> Sizin
+        <span class="cell past"></span> Geçmiş
+      </div>
+
+      <div class="grid-wrap">
+        <table class="grid">
+          <thead><tr id="grid-head"></tr></thead>
+          <tbody id="grid-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/reserve.js"></script>
+</body>
+</html>

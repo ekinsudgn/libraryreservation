@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rezervasyonlarım - Kütüphane Rezervasyon</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="reserve.html">📚 Kütüphane Rezervasyon</a>
+    <nav>
+      <a href="reserve.html">Rezervasyon Yap</a>
+      <a href="my.html">Rezervasyonlarım</a>
+      <span class="who" id="user-name"></span>
+      <button type="button" class="link" id="logout">Çıkış</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="messages"></div>
+
+    <section class="card">
+      <h1>Aktif Rezervasyonlarım</h1>
+      <div id="active-list"><p class="muted">Yükleniyor…</p></div>
+    </section>
+
+    <section class="card">
+      <h1>Geçmiş Rezervasyonlarım</h1>
+      <div id="past-list"><p class="muted">Yükleniyor…</p></div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/my.js"></script>
+</body>
+</html>
